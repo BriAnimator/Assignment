@@ -7,7 +7,7 @@ float playerWidth = 50;
 
 void setup()
 {
-  size(500,500);
+  size(500,600);
   playerX = width / 2;
   playerY = height - playerHeight;
 }
