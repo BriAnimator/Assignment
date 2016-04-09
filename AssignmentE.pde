@@ -33,4 +33,17 @@ void draw()
   line(playerX + halfWidth, playerY
     , playerX + halfWidth, playerY + halfHeight);
   
+  
+  if (keyPressed)
+   {
+     if (keyCode == LEFT && playerX > halfWidth)
+     {
+       playerX --;
+     }
+     if (keyCode == RIGHT && playerX < width - halfWidth)
+     {
+       playerX ++; 
+     }
+   }
+     
 }
