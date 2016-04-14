@@ -7,12 +7,17 @@ class Shields
   
   void render()
   {
-    
+    //Change to make big cubes into smaller cubes so they can be destroyed??
+   
     for (int x = 25; x < 475; x += 100)
     {
-      rect(x,height - 150,50 ,50);
+      rect(x, height - 150, 50, 50);
     }
     
+    
+    
+    
     // rect(playerX / 2 - (width/5), height - 150, 50, 50);
+    
   }
 }
