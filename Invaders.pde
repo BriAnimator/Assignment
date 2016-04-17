@@ -15,7 +15,7 @@ class Invaders
     for (int y = 50; y < 200; y += 50)
 
     {
-      // if boolean is true, draw bricks. if brick is hit, it will turn false and therefore not draw brick
+      // if boolean is true, draw bricks. if brick is hit, it will turn false and not draw brick
       //if (invaderHit [x][y] == true)
      
       {
