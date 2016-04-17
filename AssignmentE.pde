@@ -4,12 +4,20 @@ float playerHeight = 25;
 float playerWidth = 50;
 float halfWidth = playerWidth * 0.5f;
 float halfHeight = playerHeight * 0.5f;
+boolean [][] invaderHit = new boolean [14][5];
 
 int score;
 
-float[]invaderX=new float [700];
-float[]invaderY=new float [700];
-int i=0;
+float invaderW = 35;
+float invaderH = 20;
+float invaderX;
+float invaderY;
+
+
+
+//float[]invaderX=new float [700];
+//float[]invaderY=new float [700];
+//int i=0;
 
 Ship ship;
 Shields shields;
@@ -26,15 +34,23 @@ void setup()
   playerX = width / 2;
   playerY = height - playerHeight;
   
-  for (int y = -55; y <= 150; y += 40)
+  for (int x = 0; x < 14; x++) 
+{
+    for (int y = 0; y < 5; y++)
     {
-      for (int x = 25; x <= width - 50; x += 50)
-      {
-        invaderX[i]=x;
-        invaderY[i]=y;
-        i++;
-      }
+      invaderHit[x][y] = true;
     }
+  }
+  
+//  for (int y = -55; y <= 150; y += 40)
+//    {
+//      for (int x = 25; x <= width - 50; x += 50)
+//      {
+//        invaderX[i]=x;
+//        invaderY[i]=y;
+//        i++;
+//      }
+//    }
   
 }
 
@@ -69,7 +85,7 @@ void draw()
   shields.render();
   
   invaders.render();
-  drawInvaders();
+  //drawInvaders();
   
   //float halfWidth = playerWidth * 0.5f;
   //float halfHeight = playerHeight * 0.5f;
@@ -101,11 +117,11 @@ void draw()
   // }
      
 }
-
-void drawInvaders() {
-
-  for (int i = 5 ; i < 700; i++) 
-  {
-    rect(invaderX[i], invaderY[i], 40, 10);
-   }
-}
+//
+//void drawInvaders() {
+//
+//  for (int i = 5 ; i < 700; i++) 
+//  {
+//    rect(invaderX[i], invaderY[i], 40, 10);
+//   }
+//}

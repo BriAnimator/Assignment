@@ -11,6 +11,7 @@ class Shields
    
     for (int x = 25; x < 475; x += 100)
     {
+      fill(255);
       rect(x, height - 150, 50, 50);
     }
     
