@@ -1,23 +1,24 @@
+//Player
 float playerX;
 float playerY;
 float playerHeight = 25;
 float playerWidth = 50;
 float halfWidth = playerWidth * 0.5f;
 float halfHeight = playerHeight * 0.5f;
-boolean [][] invaderHit = new boolean [14][5];
+
 
 int score;
 
+//Invaders
 float invaderW = 35;
 float invaderH = 20;
 float invaderX;
 float invaderY;
+boolean [][] invaderHit = new boolean [14][5];
 
-
-
-//float[]invaderX=new float [700];
-//float[]invaderY=new float [700];
-//int i=0;
+//Background Image 
+PImage bg;
+int y;
 
 Ship ship;
 Shields shields;
@@ -31,6 +32,10 @@ void setup()
   invaders = new Invaders();
   
   size(500,600);
+  
+  bg = loadImage("Pillars.png");
+  //bg = loadImage("Space.png");
+  
   playerX = width / 2;
   playerY = height - playerHeight;
   
@@ -61,8 +66,14 @@ void keyReleased()
 
 void draw()
 {
-  background(0);
+  background(bg);
   stroke(255);
+  
+  y++;
+  if (y > height)
+  {
+    y = 0;
+  }
   
   text("Score: " + score, 10, 20);
   textSize(13);
