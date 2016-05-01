@@ -20,7 +20,8 @@ class Invaders
      
       {
       stroke (255);
-      fill (87,255,85);
+      //fill (87,255,85);
+      noFill();
       rect  (x, y, invaderW, invaderH);
       }
       
