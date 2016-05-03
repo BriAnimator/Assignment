@@ -25,9 +25,16 @@ class Ship
       {
         playerX --;
       }
+      
       if (keyCode == RIGHT && playerX < width - halfWidth)
       {
         playerX ++; 
+      }
+      
+      if (key == ' ')
+      {
+        float bulletY = playerY - 40;
+       line(playerX, playerY-15,playerX,bulletY); 
       }
     }
     
