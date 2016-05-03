@@ -33,9 +33,10 @@ class Ship
       
       if (key == ' ')
       {
-        float bulletY = playerY - 40;
+       float bulletY = playerY - 40;
        line(playerX, playerY-15,playerX,bulletY); 
       }
+     
     }
     
     

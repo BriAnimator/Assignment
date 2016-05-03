@@ -8,6 +8,7 @@ float halfHeight = playerHeight * 0.5f;
 
 
 int score;
+int lives;
 
 //Invaders
 float invaderW = 35;
@@ -46,8 +47,8 @@ void setup()
       invaderHit[x][y] = true;
     }
   } 
-   
-}
+    
+ } 
 
 boolean[] keys = new boolean[512];
 
@@ -66,6 +67,7 @@ void keyReleased()
 
 void draw()
 {
+  //Background as an image 
   background(bg);
   stroke(255);
   
@@ -75,8 +77,21 @@ void draw()
     y = 0;
   }
   
+  //Score
   text("Score: " + score, 10, 20);
   textSize(13);
+  
+  text("Lives: " + lives,10, 40);
+  
+  
+  if (lives < 0)
+  {
+    background(255);
+    text("Game Over",width * 0.35f,height * 0.5f);
+    textSize(25);
+  }
+  
+  
   
   
   ship.update();
