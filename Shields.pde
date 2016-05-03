@@ -13,6 +13,7 @@ class Shields
     {
       fill(255);
       rect(x, height - 150, 50, 50);
+      
     }
     
     

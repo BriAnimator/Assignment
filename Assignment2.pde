@@ -8,7 +8,7 @@ float halfHeight = playerHeight * 0.5f;
 
 
 int score;
-int lives;
+int lives = 3;
 
 //Invaders
 float invaderW = 35;
@@ -83,15 +83,20 @@ void draw()
   
   text("Lives: " + lives,10, 40);
   
-  
+  //GameOver Screen
   if (lives < 0)
   {
     background(255);
-    text("Game Over",width * 0.35f,height * 0.5f);
-    textSize(25);
+    fill(129,255,88);
+    text("Game Over",width * 0.40f,height * 0.5f);
+    textSize(60);
   }
   
-  
+  //Restart
+  if (key == ENTER)
+  {
+   lives = 3; 
+  }
   
   
   ship.update();
