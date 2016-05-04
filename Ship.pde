@@ -1,15 +1,7 @@
 
 class Ship
-{
-  //float playerX;
-  //float playerY;
-  //float playerHeight = 25;
-  //float playerWidth = 50;
-  //float halfWidth = playerWidth * 0.5f;
-  //float halfHeight = playerHeight * 0.5f;
-    
-  
-  
+{    
+   
   Ship()
   {
     
@@ -33,8 +25,10 @@ class Ship
       
       if (key == ' ')
       {
-       float bulletY = playerY - 40;
-       line(playerX, playerY-15,playerX,bulletY); 
+          ellipse(250,bulletY,5,5);
+          bulletY -= 20;
+//       float bulletY = playerY - 40;
+//       line(playerX, playerY-15,playerX,bulletY); 
       }
      
     }

@@ -17,6 +17,12 @@ float invaderX;
 float invaderY;
 boolean [][] invaderHit = new boolean [14][5];
 
+
+//Bullets
+float bulletY;
+float bulletX = width/2;
+float bulletHeight = 30;
+
 //Background Image 
 PImage bg;
 int y;
@@ -28,18 +34,23 @@ Invaders invaders;
 
 void setup()
 {
+  
   ship = new Ship();
   shields = new Shields();
   invaders = new Invaders();
   
   size(500,600);
   
+  //Background image
   bg = loadImage("Pillars.png");
   //bg = loadImage("Space.png");
   
   playerX = width / 2;
   playerY = height - playerHeight;
   
+  bulletY = height - bulletHeight;
+  
+  //Invaders alive
   for (int x = 0; x < 14; x++) 
   {
     for (int y = 0; y < 5; y++)
@@ -71,6 +82,9 @@ void draw()
   background(bg);
   stroke(255);
   
+  
+  
+  //Backgorund
   y++;
   if (y > height)
   {

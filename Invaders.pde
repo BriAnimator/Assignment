@@ -14,10 +14,11 @@ class Invaders
       // if boolean is true, draw bricks. if brick is hit, it will turn false and not draw brick
       //if (invaderHit [x][y] == true)
       {
-      stroke (255);
+      stroke (189,255,88);
       //fill (87,255,85);
       noFill();
       rect  (x,y, invaderW, invaderH);
+      
       }
     }
   }
