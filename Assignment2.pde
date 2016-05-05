@@ -86,7 +86,6 @@ void draw()
   stroke(255);
   
   
-  
   //Backgorund
   y++;
   if (y > height)
@@ -130,6 +129,13 @@ void draw()
   else 
   {
     background(0);
+    fill(129,255,88);
+    text("Click to Start",width * 0.4f, height * 0.5f);
+    text("Arrow Keys to move", width * 0.4f, height * 0.55f);
+    text("Space to Shoot", width * 0.4, height * 0.60f);
+    textSize(100);
+    
+    
   }
 }
 
