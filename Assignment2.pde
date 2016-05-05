@@ -1,3 +1,7 @@
+import ddf.minim.*;
+Minim minim;
+AudioPlayer song;
+
 //Player
 float playerX;
 float playerY;
@@ -15,7 +19,7 @@ float invaderW = 35;
 float invaderH = 20;
 float invaderX;
 float invaderY;
-boolean [][] invaderHit = new boolean [14][5];
+boolean [][] invaderKill = new boolean [0][500];
 
 
 
@@ -37,25 +41,21 @@ void setup()
   
   size(500,600);
   
+  //Music
+  minim = new Minim(this);
+  song = minim.loadFile("BackgroundMusic.mp3");
+  song.play();
+  
+  
   //Background image
   bg = loadImage("Pillars.png");
   //bg = loadImage("Space.png");
   
   playerX = width / 2;
   playerY = height - playerHeight;
-  
-
-  
-  //Invaders alive
-  for (int x = 0; x < 14; x++) 
-  {
-    for (int y = 0; y < 5; y++)
-    {
-      invaderHit[x][y] = true;
-    }
-  } 
     
  } 
+
 
 boolean[] keys = new boolean[512];
 
@@ -117,4 +117,8 @@ void draw()
   invaders.render();
   
 }
+
+
+
+
 
