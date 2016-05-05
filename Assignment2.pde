@@ -18,10 +18,6 @@ float invaderY;
 boolean [][] invaderHit = new boolean [14][5];
 
 
-//Bullets
-float bulletY;
-float bulletX = width/2;
-float bulletHeight = 30;
 
 //Background Image 
 PImage bg;
@@ -48,7 +44,7 @@ void setup()
   playerX = width / 2;
   playerY = height - playerHeight;
   
-  bulletY = height - bulletHeight;
+
   
   //Invaders alive
   for (int x = 0; x < 14; x++) 

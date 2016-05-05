@@ -23,14 +23,20 @@ class Ship
         playerX ++; 
       }
       
-      if (key == ' ')
-      {
-          ellipse(250,bulletY,5,5);
-          bulletY -= 20;
-//       float bulletY = playerY - 40;
-//       line(playerX, playerY-15,playerX,bulletY); 
-      }
-     
+//      if (key == ' ')
+//      {  
+//        
+//         float bulletY = 0;
+//         
+//         if (playerX > x && playerX < x + invaderWidth)
+//         {
+//           bulletY = x;
+//           score += 10;
+//         }
+//         
+//         line(playerX, playerY-15,playerX,bulletY); 
+//      }
+//     
     }
     
     
