@@ -27,6 +27,7 @@ boolean [][] invaderKill = new boolean [0][500];
 PImage bg;
 int y;
 
+//Splash Screen
 boolean click = false;
 
 Ship ship;
@@ -36,28 +37,27 @@ Invaders invaders;
 
 void setup()
 {
-  
+
   ship = new Ship();
   shields = new Shields();
   invaders = new Invaders();
-  
-  size(500,600);
-  
+
+  size(500, 600);
+
   //Music
   minim = new Minim(this);
   song = minim.loadFile("BackgroundMusic.mp3");
   song.play();
   song.loop();
-  
-  
+
+
   //Background image
   bg = loadImage("Pillars.png");
   //bg = loadImage("Space.png");
-  
+
   playerX = width / 2;
   playerY = height - playerHeight;
-    
- } 
+} 
 
 
 boolean[] keys = new boolean[512];
@@ -73,74 +73,68 @@ void keyReleased()
 }
 
 
-  void mouseClicked()
-  {
-    click = true;
-  }
-  
+void mouseClicked()
+{
+  click = true;
+}
+
 
 void draw()
 {
   //Background as an image 
   background(bg);
   stroke(255);
-  
-  
+
+
   //Backgorund
   y++;
   if (y > height)
   {
     y = 0;
   }
-  
+
   //Score
   text("Score: " + score, 10, 20);
   textSize(13);
-  
-  text("Lives: " + lives,10, 40);
-  
+
+  text("Lives: " + lives, 10, 40);
+
   //GameOver Screen
   if (lives < 0)
   {
     background(255);
-    fill(129,255,88);
-    text("Game Over",width * 0.40f,height * 0.5f);
+    fill(129, 255, 88);
+    text("Game Over", width * 0.40f, height * 0.5f);
     textSize(60);
   }
-  
+
   //Restart
   if (key == ENTER)
   {
-   lives = 3; 
+    lives = 3;
   }
-  
-  
+
+
   if (click == true)
   {
-  
-  ship.update();
-  ship.render();
-  
-  shields.render();
-  
-  invaders.render();
-  }
-  
-  else 
+    invaders.render();
+
+    ship.update();
+    ship.render();
+
+    shields.render();
+  } else 
   {
     background(0);
-    fill(129,255,88);
+    fill(129, 255, 88);
     textSize(60);
-    text("Space Invaders",width * 0.1f, height * 0.4f);
+    text("Space Invaders", width * 0.1f, height * 0.4f);
     textSize(25);
-    text("Click to Start",width * 0.25f, height * 0.5f);
+    text("Click to Start", width * 0.25f, height * 0.5f);
     text("Arrow Keys to move", width * 0.25f, height * 0.55f);
     text("Space to Shoot", width * 0.25, height * 0.60f);
-    
-    
   }
 }
-
 
 
 
