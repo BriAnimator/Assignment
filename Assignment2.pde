@@ -27,6 +27,8 @@ boolean [][] invaderKill = new boolean [0][500];
 PImage bg;
 int y;
 
+boolean click = false;
+
 Ship ship;
 Shields shields;
 Invaders invaders;
@@ -45,6 +47,7 @@ void setup()
   minim = new Minim(this);
   song = minim.loadFile("BackgroundMusic.mp3");
   song.play();
+  song.loop();
   
   
   //Background image
@@ -70,7 +73,11 @@ void keyReleased()
 }
 
 
-
+  void mouseClicked()
+  {
+    click = true;
+  }
+  
 
 void draw()
 {
@@ -109,13 +116,21 @@ void draw()
   }
   
   
+  if (click == true)
+  {
+  
   ship.update();
   ship.render();
   
   shields.render();
   
   invaders.render();
+  }
   
+  else 
+  {
+    background(0);
+  }
 }
 
 
